@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Space Grotesk", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
+        display: ["Playfair Display", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -91,8 +91,8 @@ export default {
           "100%": { transform: "scale(1)", opacity: "1" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px -5px hsl(var(--glow) / 0.3)" },
-          "50%": { boxShadow: "0 0 30px -5px hsl(var(--glow) / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px -5px hsl(var(--glow) / 0.2)" },
+          "50%": { boxShadow: "0 0 30px -5px hsl(var(--glow) / 0.35)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },

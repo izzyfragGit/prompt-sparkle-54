@@ -44,9 +44,8 @@ const Index = () => {
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
               CV Expérientiel Interactif
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-gradient">Alexandre</span>{" "}
-              <span className="text-foreground">Papas</span>
+            <h1 className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight" style={{ color: '#096C6C' }}>
+              Alexandre Papas
             </h1>
             <p className="text-xl sm:text-2xl font-display text-muted-foreground mb-4">
               Digital Strategy & AI Workflow Architect

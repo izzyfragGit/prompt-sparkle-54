@@ -69,10 +69,10 @@ const Index = () => {
               CV Expérientiel Interactif
             </p>
             <h1
-              className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight"
+              className="font-hero text-5xl sm:text-7xl mb-6 leading-tight"
               style={{ color: '#096C6C' }}
             >
-              Alexandre Papas
+              Alexandre PAPAS
             </h1>
             <p className="text-xl sm:text-2xl font-display text-muted-foreground mb-4">
               Directeur Stratégie Digitale & IA

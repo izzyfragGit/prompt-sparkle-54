@@ -64,7 +64,7 @@ export function ChatWidget() {
           "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg",
           isOpen
             ? "bg-secondary text-foreground"
-            : "bg-gradient-to-r from-primary to-accent text-primary-foreground animate-pulse-glow"
+            : "bg-primary text-primary-foreground animate-pulse-glow"
         )}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}

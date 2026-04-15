@@ -30,7 +30,7 @@ const Contact = () => {
                 <Linkedin className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 <div>
                   <p className="font-medium text-foreground">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">linkedin.com/in/alexandrepapas</p>
+                  <p className="text-sm text-muted-foreground">linkedin.com/in/alexandre-papas</p>
                 </div>
               </a>
               <a

@@ -21,7 +21,7 @@ export const competenceClusters: CompetenceCluster[] = [
     hardSkills: [
       { name: "Conseil en stratégie digitale & omnicanale", experienceIds: ["cdo-cms", "snovae", "wavemaker", "iprospect"] },
       { name: "Cadrage stratégique & diagnostic de maturité digitale", experienceIds: ["snovae", "iprospect"] },
-      { name: "Traduction enjeux business → plans d'activation", experienceIds: ["cdo-cms", "snovae", "wavemaker"] },
+      { name: "Traduction enjeux business en plans d'activation", experienceIds: ["cdo-cms", "snovae", "wavemaker"] },
       { name: "Go-to-market digital & media", experienceIds: ["wavemaker", "carat-pluri"] },
       { name: "Business case digital & ROI marketing", experienceIds: ["snovae", "wavemaker"] },
       { name: "Due diligence digitale / media / performance", experienceIds: ["wavemaker", "iprospect"] },
@@ -41,7 +41,7 @@ export const competenceClusters: CompetenceCluster[] = [
       { name: "Pilotage de la performance media (KPI, ROAS, CAC, LTV)", experienceIds: ["wavemaker", "iprospect", "iprospect-digital"] },
       { name: "Measurement frameworks & reporting exécutif", experienceIds: ["wavemaker", "cdo-cms"] },
       { name: "Data-driven decision making", experienceIds: ["wavemaker", "iprospect"] },
-      { name: "Dataviz & dashboards (GA4, plateformes media)", experienceIds: ["wavemaker", "cdo-cms"] },
+      { name: "Lecture & interprétation de dashboards (GA4, plateformes media)", experienceIds: ["wavemaker", "cdo-cms"] },
       { name: "Exploitation data 1st / 2nd / 3rd party", experienceIds: ["wavemaker"] },
       { name: "Media governance & coordination multi-marchés", experienceIds: ["wavemaker"] },
     ]
@@ -67,7 +67,7 @@ export const competenceClusters: CompetenceCluster[] = [
     icon: "🤝",
     color: "from-purple-500 to-pink-500",
     hardSkills: [
-      { name: "Pilotage d'équipes pluridisciplinaires (jusqu'à 15+ personnes)", experienceIds: ["cdo-cms", "iprospect", "carat-pluri"] },
+      { name: "Pilotage d'équipes pluridisciplinaires (jusqu'à 15 personnes)", experienceIds: ["cdo-cms", "iprospect", "carat-pluri"] },
       { name: "Coaching, upskilling & acculturation digitale", experienceIds: ["cdo-cms", "iprospect", "snovae"] },
       { name: "Gestion de projets complexes multi-stakeholders", experienceIds: ["snovae", "wavemaker", "iprospect"] },
       { name: "Storytelling stratégique & présentations exécutives", experienceIds: ["cdo-cms", "wavemaker"] },
@@ -75,9 +75,9 @@ export const competenceClusters: CompetenceCluster[] = [
     ],
     softSkills: [
       { name: "Leadership collaboratif", experienceIds: ["cdo-cms", "iprospect", "carat-pluri"] },
-      { name: "Pédagogie / vulgarisation", experienceIds: ["cdo-cms", "snovae", "iprospect"] },
+      { name: "Pédagogie & vulgarisation", experienceIds: ["cdo-cms", "snovae", "iprospect"] },
       { name: "Écoute active", experienceIds: ["snovae", "cdo-cms"] },
-      { name: "Empathie & engagement dans la progression des équipes", experienceIds: ["cdo-cms", "iprospect"] },
+      { name: "Engagement dans la progression des équipes", experienceIds: ["cdo-cms", "iprospect"] },
     ]
   },
   {
@@ -95,7 +95,7 @@ export const competenceClusters: CompetenceCluster[] = [
     softSkills: [
       { name: "Adaptabilité (B2B/B2C, grands groupes/start-ups)", experienceIds: ["cdo-cms", "snovae", "wavemaker"] },
       { name: "Curiosité intellectuelle", experienceIds: ["snovae", "cdo-cms"] },
-      { name: "Détermination / Résilience", experienceIds: ["snovae"] },
+      { name: "Détermination & résilience", experienceIds: ["snovae"] },
     ]
   },
   {
@@ -104,14 +104,13 @@ export const competenceClusters: CompetenceCluster[] = [
     icon: "🤖",
     color: "from-violet-500 to-fuchsia-500",
     hardSkills: [
+      { name: "Conception de copilotes métier (architecture RAG, intégration M365)", experienceIds: ["snovae"] },
+      { name: "Automatisation de workflows IA multi-étapes (Make.com, API Anthropic)", experienceIds: ["snovae"] },
+      { name: "Prompt engineering avancé : multi-contraintes, portabilité cross-modèles", experienceIds: ["snovae"] },
+      { name: "Pilotage de LLMs par sédimentation contextuelle et continuité inter-sessions", experienceIds: ["snovae"] },
       { name: "Structuration de problématiques business complexes avec LLMs", experienceIds: ["snovae"] },
-      { name: "Conception de pipelines multi-outils intégrant LLMs et automatisation", experienceIds: ["snovae"] },
-      { name: "Prompt engineering structuré avec contraintes stylistiques et opérationnelles", experienceIds: ["snovae"] },
-      { name: "Prompt engineering par sédimentation contextuelle", experienceIds: ["snovae"] },
-      { name: "Conception de documents de continuité contextuelle", experienceIds: ["snovae"] },
-      { name: "Pensée systémique appliquée aux LLMs", experienceIds: ["snovae"] },
       { name: "Transformation d'analyses IA en livrables exécutifs", experienceIds: ["snovae"] },
-      { name: "Exploration de faisabilité d'intégrations API", experienceIds: ["snovae"] },
+      { name: "Exploration de faisabilité d'intégrations API et MCP", experienceIds: ["snovae"] },
     ]
   }
 ];

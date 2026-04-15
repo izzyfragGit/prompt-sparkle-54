@@ -20,8 +20,8 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="font-display font-bold text-lg text-gradient">
-            Alexandre Papas
+          <Link to="/" className="font-hero text-lg text-gradient">
+            Alexandre PAPAS
           </Link>
 
           {/* Desktop */}

@@ -62,7 +62,7 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <Link to="/parcours">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground font-display text-base px-8 py-6 glow-border">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-display text-base px-8 py-6 glow-border">
                 Explorer mon parcours
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

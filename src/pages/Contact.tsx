@@ -22,7 +22,7 @@ const Contact = () => {
             <h2 className="font-display text-xl font-semibold mb-6">Me contacter</h2>
             <div className="space-y-4">
               <a
-                href="https://www.linkedin.com/in/alexandrepapas/"
+                href="https://www.linkedin.com/in/alexandre-papas/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors group"
@@ -34,13 +34,13 @@ const Contact = () => {
                 </div>
               </a>
               <a
-                href="mailto:contact@alexandrepapas.com"
+                href="mailto:apapas@gmail.com"
                 className="flex items-center gap-4 p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-colors group"
               >
                 <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 <div>
                   <p className="font-medium text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">contact@alexandrepapas.com</p>
+                  <p className="text-sm text-muted-foreground">apapas@gmail.com</p>
                 </div>
               </a>
             </div>

@@ -80,7 +80,7 @@ const Contact = () => {
             <p className="text-sm text-muted-foreground mb-6">
               Téléchargez la version PDF de mon CV.
             </p>
-            <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground glow-border">
+            <Button className="bg-primary text-primary-foreground glow-border">
               <Download className="mr-2 h-4 w-4" />
               Télécharger le CV (PDF)
             </Button>

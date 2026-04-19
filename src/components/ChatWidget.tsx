@@ -15,11 +15,25 @@ const suggestedQuestions = [
   "Quelle est sa vision de la stratégie digitale ?",
 ];
 
+// Génère ou récupère un session_id anonyme stocké en localStorage
+// Permet de corréler les messages d'un même visiteur sans l'identifier
+function getOrCreateSessionId(): string {
+  if (typeof window === "undefined") return "";
+  const key = "chat_session_id";
+  let id = localStorage.getItem(key);
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem(key, id);
+  }
+  return id;
+}
+
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId] = useState<string>(() => getOrCreateSessionId());
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,7 +56,10 @@ export function ChatWidget() {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
         },
-        body: JSON.stringify({ messages: updatedMessages.map((m) => ({ role: m.role, content: m.content })) }),
+        body: JSON.stringify({
+          messages: updatedMessages.map((m) => ({ role: m.role, content: m.content })),
+          session_id: sessionId,
+        }),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();

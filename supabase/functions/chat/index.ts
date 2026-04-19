@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SYSTEM_PROMPT = `# Système Prompt — Chat Portfolio Alexandre Papas
 
@@ -818,13 +819,39 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+// Client Supabase pour logger les échanges (service role, bypasse RLS)
+const supabaseUrl = Deno.env.get("SUPABASE_URL");
+const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+const supabase = (supabaseUrl && supabaseServiceKey)
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : null;
+
+// Helper : insert non-bloquant d'un message dans chat_logs
+// Si l'insert échoue, on log en console mais on ne bloque pas la réponse au visiteur
+async function logMessage(
+  sessionId: string | undefined,
+  role: "user" | "assistant",
+  content: string,
+  userAgent: string | null,
+) {
+  if (!supabase || !sessionId || !content) return;
+  const { error } = await supabase.from("chat_logs").insert({
+    session_id: sessionId,
+    role,
+    content,
+    user_agent: userAgent,
+  });
+  if (error) console.error(`[chat_logs] insert ${role} failed:`, error.message);
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
 
   try {
-    const { messages } = await req.json();
+    const { messages, session_id } = await req.json();
+    const userAgent = req.headers.get("user-agent");
 
     const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
     if (!apiKey) {
@@ -832,6 +859,12 @@ serve(async (req) => {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
+    }
+
+    // Logger le dernier message utilisateur avant appel Anthropic (non bloquant)
+    const lastMessage = messages?.[messages.length - 1];
+    if (lastMessage?.role === "user" && lastMessage?.content) {
+      logMessage(session_id, "user", lastMessage.content, userAgent);
     }
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -859,6 +892,11 @@ serve(async (req) => {
 
     const data = await response.json();
     const reply = data.content?.[0]?.text ?? "";
+
+    // Logger la réponse assistant (non bloquant)
+    if (reply) {
+      logMessage(session_id, "assistant", reply, userAgent);
+    }
 
     return new Response(JSON.stringify({ reply }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

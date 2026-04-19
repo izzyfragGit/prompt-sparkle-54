@@ -121,9 +121,17 @@ export function ChatWidget() {
           </div>
           <div className="p-3 border-t border-border">
             <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex gap-2">
-              <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Posez une question..." className="flex-1 bg-secondary/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
+              <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Posez une question..." maxLength={2000} className="flex-1 bg-secondary/50 border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary" />
               <Button type="submit" size="icon" disabled={!input.trim() || isLoading}><Send className="h-4 w-4" /></Button>
             </form>
+            <div className={cn(
+              "text-xs text-right mt-1 transition-colors",
+              input.length >= 2000 ? "text-destructive" :
+              input.length >= 1800 ? "text-orange-500" :
+              "text-muted-foreground"
+            )}>
+              {input.length}/2000
+            </div>
           </div>
         </div>
       )}

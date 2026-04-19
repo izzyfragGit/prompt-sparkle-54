@@ -73,11 +73,18 @@ export function ChatWidget() {
           </div>
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 && (
-              <div className="space-y-3">
-                <p className="text-sm text-muted-foreground">Suggestions :</p>
-                {suggestedQuestions.map((q) => (
-                  <button key={q} onClick={() => send(q)} className="block w-full text-left text-sm px-3 py-2 rounded-lg bg-secondary/50 hover:bg-secondary text-foreground transition-colors">{q}</button>
-                ))}
+              <div className="space-y-4">
+                <div className="text-sm text-left">
+                  <div className="inline-block max-w-[85%] px-3 py-2 rounded-xl bg-secondary text-secondary-foreground rounded-bl-sm">
+                    Bonjour, je suis l'assistant d'Alexandre Papas. Posez-moi vos questions sur son parcours, ses compétences ou le fit avec votre recherche. Pour bien cibler, dites-moi sur quel type de poste vous évaluez son profil.
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">Ou choisissez une suggestion :</p>
+                  {suggestedQuestions.map((q) => (
+                    <button key={q} onClick={() => send(q)} className="block w-full text-left text-sm px-3 py-2 rounded-lg bg-secondary/50 hover:bg-secondary text-foreground transition-colors">{q}</button>
+                  ))}
+                </div>
               </div>
             )}
             {messages.map((msg, i) => (
